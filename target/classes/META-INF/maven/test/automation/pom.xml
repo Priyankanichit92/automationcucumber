@@ -15,6 +15,24 @@
   </properties>
 
   <dependencies>
+  <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.9.2</version>
+</dependency>
+
+
+
+
+   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-devtools</artifactId>
+    <version>4.0.0-rc-1</version>
+</dependency>
+
+
    <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
@@ -65,6 +83,7 @@
     <artifactId>selenium-java</artifactId>
     <version>4.16.1</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
@@ -72,5 +91,15 @@
     <version>2.16.1</version>
 </dependency>
 
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.2</version>
+</dependency>
+  	<dependency>
+  		<groupId>TestNg</groupId>
+  		<artifactId>TestNg</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

@@ -48,11 +48,13 @@ public class FirstGetRequest {
 	 jsondata.put("job","qa");
 	 
 	 baseURI=("https://reqres.in/api/users");
-	given().header("Content-type","application/json")
+	given()
+	 .header("Content-type","application/json")
 	 .contentType(ContentType.JSON)
 	 .body(jsondata.toJSONString())
-	 .when().post()
-	 .then().statusCode(201);
+	
+	.when().post()
+	.then().statusCode(201);
 	 
  }
 // @Test
@@ -89,9 +91,9 @@ public class FirstGetRequest {
 	 //Response res=reqspe.auth().basic("postman","password").get();
 	 Response res=reqspe.auth().preemptive().basic("postman","password").get();
 	 Response res1=reqspe.auth().digest("postman","password").get();
-	 System.out.println("Response status"+res.statusLine());
+	 System.out.println("Response status line"+res.statusLine());
 	 System.out.println("Response status"+res.body().asString());
-	 System.out.println("Response status"+res1.body().asString());
+	 System.out.println("Response status1"+res1.body().asString());
 	 
  }
 }

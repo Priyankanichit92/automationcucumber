@@ -37,6 +37,7 @@ public class screenshot01 {
 		//used to customize the behavior of the Chrome browser
         ChromeOptions options = new ChromeOptions();
         options.addArguments("incognito");
+       // options.setAcceptInsecureCerts(true);
         WebDriver driver = new ChromeDriver(options);
        // driver.navigate().to("https://www.facebook.com");
      //   driver.manage().window().maximize();
@@ -49,6 +50,7 @@ public class screenshot01 {
 //       options.addArguments("start-fullscreen");
 //       options.addArguments("proxy-server=address:port");
 //       options.addArguments("disable-popup-blocking");
+       
        /*"disable-dev-shm-usage": Overcomes limited resource problems in Linux environments (often used in CI/CD pipelines).
        "enable-automation": Enables automation-related features.
        User Data
@@ -164,47 +166,50 @@ public class screenshot01 {
 //		        robot.keyRelease(KeyEvent.VK_ENTER);
 
 		/// ..............v........................... newwindow...............................
-//		driver.get("http://localhost:4200/RegistrationForm");
-//		System.out.println(driver.getTitle());
-//		driver.switchTo().newWindow(WindowType.WINDOW);
-//		// driver.switchTo().newWindow(WindowType.TAB);
-//		driver.get("https://www.facebook.com");
-//		System.out.println(driver.getTitle());
-//		Set<String> windowhandle = driver.getWindowHandles();
-//		List<String> handle = new ArrayList<String>();
-//		handle.addAll(windowhandle);
-//		driver.close();
-//
-//		driver.switchTo().window(handle.get(0));
-//
-//		System.out.println(driver.getTitle());
-        driver.get("http://localhost:4200/RegistrationForm");
+		driver.get("http://localhost:4200/RegistrationForm");
+		System.out.println(driver.getTitle());
+		driver.switchTo().newWindow(WindowType.WINDOW);
+		// driver.switchTo().newWindow(WindowType.TAB);
+		driver.get("https://www.facebook.com");
+		System.out.println(driver.getTitle());
+		Set<String> windowhandle = driver.getWindowHandles();
+		List<String> handle = new ArrayList<String>(windowhandle);
+		//handle.addAll(windowhandle);
+		driver.close();
+
+		driver.switchTo().window(handle.get(0));
+
+		System.out.println(driver.getTitle());
+        
+        
+        
+       // driver.get("http://localhost:4200/RegistrationForm");
 
        
-        selectgender(driver,"Male");
-        selectgender(driver,"Female");
-        selectgender(driver,"Other");
-        Thread.sleep(2000);
-//		driver.quit();
+//        selectgender(driver,"Male");
+//        selectgender(driver,"Female");
+//        selectgender(driver,"Other");
+//        Thread.sleep(2000);
+		driver.quit();
 
 		System.out.println("Hello quit!");
 	}
-	public static void selectgender(WebDriver driver,String value) {
-//		 WebElement gender = driver.findElement(By.xpath("//input[@type='radio' and @value='"+value+"']"));
-//		  System.out.println(value);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-        // Wait for the radio button to be present
-        WebElement gender = wait.until(ExpectedConditions.visibilityOfElementLocated(
-            By.xpath("//input[@type='radio' and @value='" + value + "']")
-        ));
-
-	     
-		  Actions actions = new Actions(driver);
-	        actions.moveToElement(gender).click().perform();
-
-	        System.out.println(value + " radio button selected: " + gender.isSelected());
-	    
-	}
+//	public static void selectgender(WebDriver driver,String value) {
+////		 WebElement gender = driver.findElement(By.xpath("//input[@type='radio' and @value='"+value+"']"));
+////		  System.out.println(value);
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//
+//        // Wait for the radio button to be present
+//        WebElement gender = wait.until(ExpectedConditions.visibilityOfElementLocated(
+//            By.xpath("//input[@type='radio' and @value='" + value + "']")
+//        ));
+//
+//	     
+//		  Actions actions = new Actions(driver);
+//	        actions.moveToElement(gender).click().perform();
+//
+//	        System.out.println(value + " radio button selected: " + gender.isSelected());
+//	    
+//	}
 
 }

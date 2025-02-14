@@ -39,9 +39,9 @@ public class ReadData {
                 String password = row.getCell(1).getStringCellValue();
                 System.out.println("Username: " + username + ", Password: " + password);
                
-                driver.get("http://localhost:4200/auth/login");
+               // driver.get("http://localhost:4200/auth/login");
 
-           
+                driver.get("http://localhost:50023/auth/login");
                 WebElement usernameField = driver.findElement(By.id("username"));
                 usernameField.sendKeys(username
                 		); // Use the value from Excel
@@ -56,17 +56,18 @@ public class ReadData {
 
             
         }
-        driver.close();
-    	int lastRowNum = sheet.getLastRowNum();
-//		//System.out.println(lastRowNum);
-		//Row newRow = sheet.createRow(maxRecords + 1);
-        Row newrow=sheet.createRow(lastRowNum+1);
-        newrow.createCell(0).setCellValue("ppcb");
-        newrow.createCell(1).setCellValue("ppcb");
-        FileOutputStream add=new FileOutputStream("C:\\Users\\Rahul Kolhe\\Desktop\\newexl1.xlsx");
-        workbook.write(add);
-        
-        driver.close();
+       driver.close();
+//    	int lastRowNum = sheet.getLastRowNum();
+////		//System.out.println(lastRowNum);
+//		//Row newRow = sheet.createRow(maxRecords + 1);
+//        Row newrow=sheet.createRow(lastRowNum+1);
+//        newrow.createCell(0).setCellValue("ppcb1");
+//        newrow.createCell(1).setCellValue("ppcb");
+//        FileOutputStream add=new FileOutputStream("C:\\Users\\Rahul Kolhe\\Desktop\\newexl1.xlsx");
+//        workbook.write(add);
+//        workbook.close();
+//    	file.close();
+//        driver.close();
 //		for (Row row : sheet) {
 //			if (recordCount >= maxRecords) {
 //                break;
@@ -100,8 +101,8 @@ public class ReadData {
 //		System.out.println("Data written successfully!");
 
 		// Close the workbook and file input stream
-	workbook.close();
-	file.close();
+//	workbook.close();
+//	file.close();
 		
 
         }

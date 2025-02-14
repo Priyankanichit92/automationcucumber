@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.automation.FirstGetRequest">
+      <class name="readData.ReadDataProviderWithExel">
         <methods>
-          <include name="posttc01"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="testDataProvider" invocation-numbers="0"/>
         </methods>
-      </class> <!-- test.automation.FirstGetRequest -->
+      </class> <!-- readData.ReadDataProviderWithExel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
